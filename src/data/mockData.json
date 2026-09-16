@@ -1,0 +1,240 @@
+{
+  "properties": [
+    {
+      "id": 1042,
+      "name": "Marine Ridge 42",
+      "city": "Andheri West, Mumbai",
+      "status": "Occupied",
+      "rentRoll": 2450000,
+      "unitsLet": 47,
+      "unitsTotal": 48,
+      "tenant": "Priya Sharma"
+    },
+    {
+      "id": 1088,
+      "name": "Indira Court",
+      "city": "Indiranagar, Bengaluru",
+      "status": "Leasing",
+      "rentRoll": 185000,
+      "unitsLet": 31,
+      "unitsTotal": 36,
+      "tenant": "Boutique apartments"
+    },
+    {
+      "id": 1121,
+      "name": "Cassia Villas",
+      "city": "Vagator, Goa",
+      "status": "Occupied",
+      "rentRoll": 320000,
+      "unitsLet": 9,
+      "unitsTotal": 9,
+      "tenant": "Rohan Mehta"
+    },
+    {
+      "id": 1190,
+      "name": "Cyber Gateway",
+      "city": "Sector 18, Gurgaon",
+      "status": "Vacant",
+      "rentRoll": 640000,
+      "unitsLet": 0,
+      "unitsTotal": 12,
+      "tenant": "Commercial"
+    },
+    {
+      "id": 1214,
+      "name": "Skyline 22",
+      "city": "Banjara Hills, Hyderabad",
+      "status": "Occupied",
+      "rentRoll": 875000,
+      "unitsLet": 52,
+      "unitsTotal": 54,
+      "tenant": "Aarti Nair"
+    },
+    {
+      "id": 1242,
+      "name": "Lotus Nook",
+      "city": "Whitefield, Bengaluru",
+      "status": "Leasing",
+      "rentRoll": 210000,
+      "unitsLet": 18,
+      "unitsTotal": 24,
+      "tenant": "Mixed residential"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay_Nq81Kx",
+      "tenant": "Rohan Mehta",
+      "property": "Cassia Villas",
+      "purpose": "Rent \u00b7 Jun",
+      "method": "UPI",
+      "amount": 48000,
+      "status": "Captured"
+    },
+    {
+      "id": "pay_Nq7yTa",
+      "tenant": "Priya Sharma",
+      "property": "Marine Ridge 42",
+      "purpose": "Rent \u00b7 Jun",
+      "method": "Netbanking",
+      "amount": 95000,
+      "status": "Pending"
+    },
+    {
+      "id": "pay_Nq7pLo",
+      "tenant": "Dev Patel",
+      "property": "Lotus Nook",
+      "purpose": "Security deposit",
+      "method": "Card",
+      "amount": 52000,
+      "status": "Failed"
+    },
+    {
+      "id": "pay_Nq7cVe",
+      "tenant": "Aarti Nair",
+      "property": "Skyline 22",
+      "purpose": "Rent \u00b7 Jun",
+      "method": "UPI",
+      "amount": 32500,
+      "status": "Captured"
+    },
+    {
+      "id": "pay_Nq6zRm",
+      "tenant": "Imran Qureshi",
+      "property": "Indira Court",
+      "purpose": "Maintenance levy",
+      "method": "UPI",
+      "amount": 7800,
+      "status": "Refunded"
+    },
+    {
+      "id": "pay_Nq6mBd",
+      "tenant": "Sneha Kulkarni",
+      "property": "Marine Ridge 42",
+      "purpose": "Rent \u00b7 May",
+      "method": "Netbanking",
+      "amount": 88000,
+      "status": "Captured"
+    }
+  ],
+  "leases": [
+    {
+      "id": "LSE-2201",
+      "tenant": "Priya Sharma",
+      "property": "Marine Ridge 42",
+      "start": "01 Jan 2026",
+      "end": "31 Dec 2026",
+      "rent": 95000,
+      "status": "Active"
+    },
+    {
+      "id": "LSE-2202",
+      "tenant": "Rohan Mehta",
+      "property": "Cassia Villas",
+      "start": "15 Feb 2026",
+      "end": "14 Feb 2027",
+      "rent": 48000,
+      "status": "Active"
+    },
+    {
+      "id": "LSE-2203",
+      "tenant": "Aarti Nair",
+      "property": "Skyline 22",
+      "start": "01 Apr 2026",
+      "end": "31 Mar 2027",
+      "rent": 32500,
+      "status": "Active"
+    },
+    {
+      "id": "LSE-2204",
+      "tenant": "Dev Patel",
+      "property": "Lotus Nook",
+      "start": "01 May 2025",
+      "end": "30 Apr 2026",
+      "rent": 52000,
+      "status": "Renewal due"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "MTN-317",
+      "title": "AC not cooling",
+      "place": "Skyline 22 \u00b7 7A",
+      "vendor": "CoolAir Services",
+      "age": "6 hrs ago",
+      "priority": "High",
+      "status": "Open"
+    },
+    {
+      "id": "MTN-311",
+      "title": "Leaking tap, guest bath",
+      "place": "Lotus Nook \u00b7 S2",
+      "vendor": "FixIt Hyderabad",
+      "age": "2 days ago",
+      "priority": "Low",
+      "status": "Open"
+    },
+    {
+      "id": "MTN-318",
+      "title": "Burst pipe in kitchen riser",
+      "place": "Cassia Villas \u00b7 4B",
+      "vendor": "Coastal Plumbing",
+      "age": "2 hrs ago",
+      "priority": "Urgent",
+      "status": "Assigned"
+    },
+    {
+      "id": "MTN-315",
+      "title": "Lift door sensor fault",
+      "place": "Marine Ridge 42 \u00b7 Lobby",
+      "vendor": "Otis AMC",
+      "age": "1 day ago",
+      "priority": "Urgent",
+      "status": "Assigned"
+    },
+    {
+      "id": "MTN-306",
+      "title": "Corridor lighting flicker",
+      "place": "Indira Court \u00b7 Floor 3",
+      "vendor": "Volt Works",
+      "age": "3 days ago",
+      "priority": "Low",
+      "status": "Resolved"
+    }
+  ],
+  "analytics": {
+    "occupancy": 94.6,
+    "unitsLet": 473,
+    "unitsTotal": 500,
+    "rentCollected": 4.28,
+    "rentTarget": 4.6,
+    "openMaintenance": 27,
+    "activeLeases": 218,
+    "revenue": [
+      2.6,
+      2.9,
+      2.7,
+      3.2,
+      3.5,
+      3.9,
+      4.28
+    ]
+  },
+  "api": {
+    "baseUrl": "http://localhost:8000/api/v1",
+    "routes": {
+      "admin": "/admin",
+      "analytics": "/analytics",
+      "auth": "/auth",
+      "bookings": "/bookings",
+      "leases": "/leases",
+      "maintenance": "/maintenance",
+      "notifications": "/notifications",
+      "payments": "/payments",
+      "properties": "/properties",
+      "tenants": "/tenants",
+      "users": "/users",
+      "vendors": "/vendors"
+    }
+  }
+}
