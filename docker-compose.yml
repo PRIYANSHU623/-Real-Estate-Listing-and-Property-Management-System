@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: realestate_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: realestate
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: realestate_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: "Real Estate Listing & Property Management API"
+      APP_ENV: production
+      DATABASE_URL: postgresql+asyncpg://postgres:postgrespassword@db:5432/realestate
+      JWT_SECRET_KEY: dev-jwt-super-secret-key-estatehub-2026
+      CORS_ORIGINS: http://localhost:5173,http://localhost:3000
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

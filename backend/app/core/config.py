@@ -2,6 +2,7 @@
 from functools import lru_cache
 from typing import List
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -15,7 +16,20 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
 
     # Database
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/realestate"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./realestate.db"
+
+    @field_validator("DATABASE_URL")
+    @classmethod
+    def assemble_db_connection(cls, v: str) -> str:
+        url = v.strip()
+        if url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql+asyncpg://", 1)
+        elif url.startswith("postgresql://") and not url.startswith("postgresql+asyncpg://"):
+            url = url.replace("postgresql://", "postgresql+asyncpg://", 1)
+        # asyncpg requires ssl=... instead of sslmode=...
+        if "sslmode=" in url:
+            url = url.replace("sslmode=require", "ssl=require").replace("sslmode=prefer", "ssl=prefer")
+        return url
 
     # JWT
     JWT_SECRET_KEY: str = "change-me-to-a-long-random-string"
