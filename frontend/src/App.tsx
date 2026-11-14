@@ -32,13 +32,13 @@ const ProtectedRoute: React.FC<{
       <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-slate-50 text-center">
         <h2 className="text-xl font-bold text-slate-800 mb-2">Authentication Required</h2>
         <p className="text-xs text-slate-500 max-w-sm mb-4">
-          Please sign in with your EstateHub account or use a quick demo preset to access this section.
+          Please sign in with your EstateHub account{/* or use a quick demo preset */} to access this section.
         </p>
         <button
           onClick={onOpenAuth}
           className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow-md shadow-emerald-600/20"
         >
-          Sign In / Demo Login
+          Sign In{/* / Demo Login */}
         </button>
       </div>
     );

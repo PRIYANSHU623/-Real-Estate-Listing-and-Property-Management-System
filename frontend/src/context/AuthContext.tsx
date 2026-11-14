@@ -14,7 +14,7 @@ interface AuthContextValue {
   logout: () => void;
   refreshUser: () => Promise<void>;
   refreshNotifications: () => Promise<void>;
-  quickDemoLogin: (role: UserRole) => Promise<User>;
+  // quickDemoLogin: (role: UserRole) => Promise<User>;
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -105,6 +105,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setUnreadCount(0);
   };
 
+  /*
   const quickDemoLogin = async (role: UserRole): Promise<User> => {
     const demoAccounts: Record<UserRole, { name: string; email: string; phone: string; pass: string }> = {
       OWNER: {
@@ -149,6 +150,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
     }
   };
+  */
 
   return (
     <AuthContext.Provider
@@ -163,7 +165,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         logout,
         refreshUser,
         refreshNotifications,
-        quickDemoLogin,
+        // quickDemoLogin,
       }}
     >
       {children}

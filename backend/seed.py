@@ -33,6 +33,8 @@ async def seed():
     async with engine.begin() as conn:
         await conn.run_sync(base.Base.metadata.create_all)
 
+    # Hardcoded demo seeding commented out:
+    """
     async with AsyncSessionLocal() as db:
         # Check if users already exist
         existing_owner = await User.get_by_email(db, "owner@estatehub.com")
@@ -318,6 +320,8 @@ async def seed():
 
         await db.commit()
         print("Database seeded with sample data successfully!")
+    """
+    print("Demo seed data is commented out / disabled.")
 
 if __name__ == "__main__":
     asyncio.run(seed())

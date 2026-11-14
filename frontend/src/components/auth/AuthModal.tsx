@@ -18,7 +18,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   initialMode = 'login',
 }) => {
   const [mode, setMode] = useState<'login' | 'register'>(initialMode);
-  const { login, register, quickDemoLogin } = useAuth();
+  const { login, register, /* quickDemoLogin */ } = useAuth();
   const { success, error } = useToast();
 
   const [loading, setLoading] = useState(false);
@@ -65,6 +65,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }
   };
 
+  /*
   const handleDemoPreset = async (demoRole: UserRole) => {
     setLoading(true);
     setFormError(null);
@@ -78,6 +79,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       setLoading(false);
     }
   };
+  */
 
   return (
     <Modal
@@ -242,6 +244,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       </form>
 
       {/* 1-Click Demo Testing Presets */}
+      {/*
       <div className="mt-6 pt-5 border-t border-slate-100">
         <div className="flex items-center justify-between mb-2.5">
           <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
@@ -276,6 +279,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </button>
         </div>
       </div>
+      */}
     </Modal>
   );
 };

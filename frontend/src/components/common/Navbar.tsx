@@ -28,7 +28,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
-  const { user, isAuthenticated, logout, quickDemoLogin, unreadCount, refreshNotifications } = useAuth();
+  const { user, isAuthenticated, logout, /* quickDemoLogin, */ unreadCount, refreshNotifications } = useAuth();
   const { success, error } = useToast();
   const location = useLocation();
 
@@ -37,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loadingNotifications, setLoadingNotifications] = useState(false);
-  const [switchingDemo, setSwitchingDemo] = useState(false);
+  // const [switchingDemo, setSwitchingDemo] = useState(false);
 
   const notifRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
@@ -98,6 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
     }
   };
 
+  /*
   const handleDemoSwitch = async (role: UserRole) => {
     setSwitchingDemo(true);
     try {
@@ -111,6 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
       setMobileMenuOpen(false);
     }
   };
+  */
 
   const navLinks = [
     { label: 'Marketplace', path: '/' },
@@ -181,6 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
           {/* Right Action Bar */}
           <div className="flex items-center gap-3">
             {/* Quick Demo Switcher Pill (always visible for easy testing) */}
+            {/*
             <div className="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200/80 text-xs font-semibold">
               <span className="px-2 text-slate-500 text-[11px] uppercase tracking-wider flex items-center gap-1">
                 <Sparkles className="w-3 h-3 text-amber-500" /> Demo:
@@ -213,6 +216,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
                 Admin
               </button>
             </div>
+            */}
 
             {isAuthenticated ? (
               <>
@@ -377,6 +381,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
               {link.label}
             </Link>
           ))}
+          {/*
           <div className="pt-3 border-t border-slate-100">
             <span className="text-[11px] uppercase tracking-wider font-bold text-slate-400 block px-3 mb-2">
               Switch Demo Role:
@@ -402,6 +407,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAuthModal }) => {
               </button>
             </div>
           </div>
+          */}
         </div>
       )}
     </nav>

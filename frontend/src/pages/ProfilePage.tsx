@@ -8,7 +8,7 @@ import { formatDateTime } from '../utils/formatters';
 import { User, Phone, Lock, Mail, ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const ProfilePage: React.FC = () => {
-  const { user, refreshUser, logout, quickDemoLogin } = useAuth();
+  const { user, refreshUser, logout, /* quickDemoLogin */ } = useAuth();
   const { success, error } = useToast();
 
   const [name, setName] = useState(user?.name || '');
@@ -165,6 +165,7 @@ export const ProfilePage: React.FC = () => {
             </form>
 
             {/* Quick Demo Switcher on Profile */}
+            {/*
             <div className="pt-6 border-t border-slate-100">
               <h4 className="text-xs font-bold text-slate-700 mb-2 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-500" /> Switch Demo Role
@@ -193,6 +194,7 @@ export const ProfilePage: React.FC = () => {
                 </button>
               </div>
             </div>
+            */}
 
             {/* Danger Zone */}
             <div className="pt-6 border-t border-slate-100">
